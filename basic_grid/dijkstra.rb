@@ -3,14 +3,14 @@ require 'binary_tree'
 require 'sidewinder'
 
 grid = DistanceGrid.new(10, 10)
-Sidewinder.on(grid)
+BinaryTree.on(grid)
 
 start = grid[0, 0]
 distances = start.distances
+new_start, distance = distances.max
 
-grid.distances = distances
+new_distances = new_start.distances
+goal, distance = new_distances.max
+
+grid.distances = new_distances.path_to(goal)
 puts grid
-
-
-grid.distances = distances.path_to(grid[grid.rows - 1, 0])
-puts grid.to_s
