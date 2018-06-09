@@ -1,6 +1,6 @@
-require 'distance_grid'
-require 'binary_tree'
-require 'sidewinder'
+require_relative 'distance_grid'
+require_relative 'binary_tree'
+require_relative 'sidewinder'
 
 grid = DistanceGrid.new(10, 10)
 BinaryTree.on(grid)

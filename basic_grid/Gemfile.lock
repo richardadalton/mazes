@@ -5,9 +5,10 @@ GEM
 
 PLATFORMS
   ruby
+  x64-mingw32
 
 DEPENDENCIES
   chunky_png
 
 BUNDLED WITH
-   1.13.7
+   1.15.1

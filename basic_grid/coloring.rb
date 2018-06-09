@@ -1,6 +1,6 @@
-require 'colored_grid'
-require 'binary_tree'
-require 'sidewinder'
+require_relative 'colored_grid'
+require_relative 'binary_tree'
+require_relative 'sidewinder'
 
 grid = ColoredGrid.new(25, 25)
 Sidewinder.on(grid)

@@ -1,7 +1,7 @@
 require 'optparse'
-require 'grid'
-require 'binary_tree'
-require 'sidewinder'
+require_relative 'grid'
+require_relative 'binary_tree'
+require_relative 'sidewinder'
 
 
 # This will hold the options we parse
