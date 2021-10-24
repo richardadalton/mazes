@@ -48,6 +48,7 @@ class Cell
       frontier.each do |cell|
         cell.links.each do |linked|
           next if distances[linked]
+
           distances[linked] = distances[cell] + 1
           new_frontier << linked
         end

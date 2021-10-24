@@ -1,14 +1,16 @@
 require_relative 'colored_grid'
 require_relative 'binary_tree'
-require_relative 'sidewinder'
 
-grid = ColoredGrid.new(25, 25)
-Sidewinder.on(grid)
+grid = ColoredGrid.new(50, 50)
+BinaryTree.on(grid)
 
 start = grid[grid.rows / 2, grid.columns / 2]
 
 grid.distances = start.distances
 
 
-filename = "mazes/colorized.png"
-grid.to_png.save(filename)
+filename = "mazes/red.png"
+img = grid.to_png
+img.save filename
+puts "saved to #{filename}"
+

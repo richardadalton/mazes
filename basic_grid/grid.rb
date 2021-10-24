@@ -124,8 +124,6 @@ class Grid
         end
       end
     end
-
     img
   end
-
 end
