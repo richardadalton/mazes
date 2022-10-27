@@ -1,7 +1,7 @@
 require 'optparse'
-require_relative 'grid'
-require_relative 'binary_tree'
-require_relative 'sidewinder'
+require_relative '../basic_grid/grid'
+require_relative '../maze_lib/binary_tree'
+require_relative '../maze_lib/sidewinder'
 
 
 # This will hold the options we parse
@@ -20,22 +20,26 @@ OptionParser.new do |parser|
   parser.on("-h", "--height HEIGHT", "The height of the maze") do |v|
     options[:height] = v
   end
+  parser.on("-f", "--file FILENAME", "Filename for generated image") do |v|
+    options[:file] = v
+  end
 
 end.parse!
 
 
-
 grid = Grid.new(Integer(options[:height]), Integer(options[:width]))
 
-if options[:type] == 'binarytree'
+case options[:type]
+when 'binarytree'
   puts "Building a Binary Tree Maze"
   BinaryTree.on(grid)
-elsif options[:type] == 'sidewinder'
+when 'sidewinder'
   puts "Building a Sidewinder Maze"
   Sidewinder.on(grid)
 end
 
-puts grid
-
+filename = options[:file]
 img = grid.to_png
-img.save "mazes/maze.png"
+img.save filename
+puts "saved to #{filename}"
+

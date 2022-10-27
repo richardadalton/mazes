@@ -1,4 +1,4 @@
-require_relative 'grid'
+require_relative '../basic_grid/grid'
 
 class DistanceGrid < Grid
   attr_accessor :distances

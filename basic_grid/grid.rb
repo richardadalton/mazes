@@ -1,4 +1,4 @@
-require_relative 'cell'
+require_relative '../basic_grid/cell'
 require 'chunky_png'
 
 class Grid
@@ -66,7 +66,7 @@ class Grid
 
 
   def background_color_for(cell)
-    nill
+      ChunkyPNG::Color.rgb(255, 255, 255)
   end
 
 
